@@ -21,3 +21,10 @@ class Quote(models.Model):
     address = models.CharField(max_length=100)
     gallons = models.IntegerField()
     total_price = models.DecimalField(max_digits=20, decimal_places=2)
+
+
+#Pricing module
+class Price(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    date = models.DateField()
